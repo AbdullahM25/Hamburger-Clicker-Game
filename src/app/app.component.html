@@ -24,7 +24,15 @@
   <button (click)="handleClick()">
     Cook a Hamburger (FEEEDDD MEEE MORRRE!!!)
   </button>
-  <p>You have: {{ points }} points</p>
+  <!-- clicks -->
+  <p>Burgers Cooked: {{ clickValue }}</p>
+  <div class="burger-dollar">
+    <img
+      src="https://media.discordapp.net/attachments/1359783461287755786/1359783546327273472/ChatGPT_Image_Apr_10_2025_09_53_20_AM.png?ex=67f8bc9d&is=67f76b1d&hm=5cbe51840600ddf2213ceddac22414fb098fc99435949b2f86a3acf9a23b0886&=&format=webp&quality=lossless&width=558&height=839"
+      alt=""
+    />
+    <p>{{ points }}</p>
+  </div>
 </div>
 
 <!-- Upgrades component sends an upgrade event with cost and multiplier -->
