@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header styling with blue accent */
+h1 {
+  text-align: center;
+  color: #2196f3;
+}
+
+/* General text styling */
+p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Button styling */
+button {
+  display: block;
+  margin: 1rem auto;
+  background-color: #2196f3;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #1976d2;
+}
+
+/* Burger icons styling */
+.burger-icons {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.burger-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+}
+
+/* Container for clicker elements */
+.clicker-container {
+  margin-bottom: 2rem;
+}

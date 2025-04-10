@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+  color: #e0e0e0;
+}
+
+h2 {
+  color: #2196f3;
+  text-align: center;
+}
+
+.upgrade-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.upgrade-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.upgrade-details {
+  flex-grow: 1;
+}
+
+button {
+  background-color: #2196f3;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #1976d2;
+}

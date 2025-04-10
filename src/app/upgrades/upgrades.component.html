@@ -1,0 +1,25 @@
+<h2>Upgrades</h2>
+<div *ngFor="let upgrade of upgrades" class="upgrade-card">
+  <!-- Optionally, show a small burger icon for each upgrade -->
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
+    alt="Burger Icon"
+    class="upgrade-icon"
+  />
+
+  <!-- Upgrade details -->
+  <div class="upgrade-details">
+    <p>
+      <strong>{{ upgrade.name }}</strong>
+    </p>
+    <p>
+      Cost: {{ upgrade.cost }} points — Multiplies burger effect by
+      {{ upgrade.multiplier }}x
+    </p>
+  </div>
+
+  <!-- Button to purchase the upgrade -->
+  <button (click)="buyUpgrade(upgrade)" [disabled]="points < upgrade.cost">
+    Buy {{ upgrade.name }}
+  </button>
+</div>
