@@ -16,13 +16,18 @@ export class AppComponent {
   points = 0;
 
   // The effect (points per click) starts at 1.
-  clickValue = 1;
-
+  // clickValue = 1;
+  clickValue = 0;
+  isMultiplerActive = false;
   /**
    * Called when the player clicks "Cook a Hamburger".
    */
   handleClick(): void {
-    this.points += this.clickValue;
+    this.points++;
+    this.clickValue++;
+    if (this.isMultiplerActive) {
+      // this.points += this.clickValue;
+    }
   }
 
   /**
@@ -35,6 +40,8 @@ export class AppComponent {
       this.points -= upgradeCost;
       // Multiply the current click effect by the upgrade multiplier.
       this.clickValue *= multiplier;
+      this.isMultiplerActive = true;
+      console.log('multiplier: ', multiplier);
     }
   }
 }
