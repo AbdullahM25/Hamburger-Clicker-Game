@@ -12,36 +12,36 @@ import { UpgradesComponent } from './upgrades/upgrades.component';
 export class AppComponent {
   title = 'Hamburger Clicker Game';
 
-  // Track the player's points.
+  // Total burgers cooked starts at 0.
   points = 0;
 
-  // The effect (points per click) starts at 1.
-  // clickValue = 1;
-  clickValue = 0;
+  // Current click effect (burgers per click) starts at 1.
+  clickValue = 1;
   isMultiplerActive = false;
+
   /**
    * Called when the player clicks "Cook a Hamburger".
+   * Adds clickValue to the total points.
    */
   handleClick(): void {
-    this.points++;
-    this.clickValue++;
-    if (this.isMultiplerActive) {
-      // this.points += this.clickValue;
-    }
+    this.points += this.clickValue;
   }
 
   /**
    * Handles upgrade purchases.
-   * @param upgradeCost The cost to purchase the upgrade.
-   * @param multiplier The factor by which this upgrade multiplies burger effect.
+   * Deducts the upgrade cost and doubles the click value so that
+   * subsequent clicks yield double the burgers (e.g., 1 -> 2, 2 -> 4, etc.).
+   *
+   * @param upgradeCost The cost required for this upgrade.
+   * @param multiplier  (Provided by the event but unused here, as we always double.)
    */
   handleUpgradeBought(upgradeCost: number, multiplier: number): void {
     if (this.points >= upgradeCost) {
       this.points -= upgradeCost;
-      // Multiply the current click effect by the upgrade multiplier.
-      this.clickValue *= multiplier;
+      // Double the current click effect.
+      this.clickValue *= 2;
       this.isMultiplerActive = true;
-      console.log('multiplier: ', multiplier);
+      console.log('Upgrade bought. Click value is now:', this.clickValue);
     }
   }
 }
