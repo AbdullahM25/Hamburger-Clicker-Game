@@ -1,19 +1,20 @@
 import { Component } from '@angular/core';
 import { UpgradesComponent, UpgradeData } from './upgrades/upgrades.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [UpgradesComponent] // Import the UpgradesComponent so its selector is recognized.
+  imports: [UpgradesComponent] 
 })
 export class AppComponent {
   title = 'Hamburger Clicker Game';
   points: number = 0;
   multiplier: number = 1;
 
-  // Called when the user clicks the hamburger button.
+  
   handleClick(): void {
     this.points += this.multiplier;
   }
