@@ -1,14 +1,7 @@
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  OnChanges,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-interface Upgrade {
-  name: string;
+export interface UpgradeData {
   cost: number;
   multiplier: number;
 }
@@ -16,43 +9,27 @@ interface Upgrade {
 @Component({
   selector: 'app-upgrades',
   standalone: true,
-  imports: [CommonModule],
   templateUrl: './upgrades.component.html',
   styleUrls: ['./upgrades.component.css'],
+  imports: [CommonModule] // Enables *ngFor, *ngIf, etc.
 })
-export class UpgradesComponent implements OnChanges {
-  @Input() points!: number;
-  @Output() upgradeBought = new EventEmitter<{
-    cost: number;
-    multiplier: number;
-  }>();
+export class UpgradesComponent {
+  @Input() points: number = 0;
+  @Output() upgradeBought = new EventEmitter<UpgradeData>();
 
-  // Two upgrades:
-  upgrades: Upgrade[] = [
-    {
-      name: 'Grill',
-      cost: 20,
-      multiplier: 2, // Doubles the burger effect.
-    },
-    {
-      name: 'Burger Factory',
-      cost: 50,
-      multiplier: 1.5, // Multiplies the burger effect by 1.5.
-    },
+  // Define your available upgrades.
+  upgrades = [
+    { name: 'Grill', cost: 20, multiplier: 2 },
+    { name: 'Burger Factory', cost: 50, multiplier: 5 } // Example extra upgrade.
   ];
 
-  ngOnChanges(): void {
-    // You can add any additional logic here to unlock upgrades based on points, if desired.
-  }
-
-  /**
-   * Emit the purchase event for an upgrade.
-   * @param upgrade The upgrade to be purchased.
-   */
-  buyUpgrade(upgrade: Upgrade): void {
-    this.upgradeBought.emit({
-      cost: upgrade.cost,
-      multiplier: upgrade.multiplier,
-    });
+  // This function is called when any upgrade is purchased.
+  buyUpgrade(upgrade: { name: string; cost: number; multiplier: number }): void {
+    if (this.points >= upgrade.cost) {
+      this.upgradeBought.emit({ cost: upgrade.cost, multiplier: upgrade.multiplier });
+      console.log(`${upgrade.name} upgrade purchased.`);
+    } else {
+      console.log('Not enough points for this upgrade.');
+    }
   }
 }
