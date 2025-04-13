@@ -1,21 +1,40 @@
 <h1>{{ title }}</h1>
 <p>Welcome to the Hamburger Sandwich Clicker Game!</p>
 
-
 <div class="burger-icons">
-  <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Burger Icon" class="burger-icon" />
-  <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Burger Icon" class="burger-icon" />
-  <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Burger Icon" class="burger-icon" />
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
+    alt="Burger Icon"
+    class="burger-icon"
+  />
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
+    alt="Burger Icon"
+    class="burger-icon"
+  />
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png"
+    alt="Burger Icon"
+    class="burger-icon"
+  />
 </div>
 
 <div class="clicker-container">
-  <button (click)="handleClick()">Cook a Hamburger (FEEEDDD MEEE MORRRE!!!)</button>
+  <button (click)="handleClick()">
+    Cook a Hamburger (FEEEDDD MEEE MORRRE!!!)
+  </button>
   <p>Burgers Cooked: {{ points }}</p>
   <div class="burger-dollar">
-    <img src="https://media.discordapp.net/attachments/1359783461287755786/1359783546327273472/ChatGPT_Image_Apr_10_2025_09_53_20_AM.png?ex=67f8bc9d&is=67f76b1d&hm=5cbe51840600ddf2213ceddac22414fb098fc99435949b2f86a3acf9a23b0886&=&format=webp&quality=lossless&width=558&height=839" alt="Burger Dollar" />
+    <img
+      src="src\assets\ChatGPT Image Apr 10, 2025, 09_53_20 AM.png"
+      alt="Burger Dollar"
+    />
     <p>{{ points }}</p>
   </div>
 </div>
 
 <!-- Upgrades component with input binding for points and output for upgrade purchases -->
-<app-upgrades [points]="points" (upgradeBought)="handleUpgradeBought($event)"></app-upgrades>
+<app-upgrades
+  [points]="points"
+  (upgradeBought)="handleUpgradeBought($event)"
+></app-upgrades>

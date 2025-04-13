@@ -7,20 +7,17 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Header styling with blue accent */
 h1 {
   text-align: center;
   color: #2196f3;
 }
 
-/* General text styling */
 p {
   text-align: center;
-  /* font-size: 1.2rem; */
+
   font-size: 20px;
 }
 
-/* Button styling */
 button {
   display: block;
   margin: 1rem auto;
@@ -58,7 +55,6 @@ button:hover {
   margin: 0 5px;
 }
 
-/* Container for clicker elements */
 .clicker-container {
   margin-bottom: 2rem;
 }
